@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C976D8B192BC76000C38CAB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C976D8A192BC76000C38CAB /* main.cpp */; };
+		6C97D8A7192C0576005468B7 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C97D8A5192C0576005468B7 /* app.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		6C976D87192BC76000C38CAB /* The Kings Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Kings Tournament.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C976D8A192BC76000C38CAB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6C97D8A5192C0576005468B7 /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
+		6C97D8A6192C0576005468B7 /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				6C976D8A192BC76000C38CAB /* main.cpp */,
+				6C97D8A5192C0576005468B7 /* app.cpp */,
+				6C97D8A6192C0576005468B7 /* app.h */,
 			);
 			path = "The Kings Tournament";
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C976D8B192BC76000C38CAB /* main.cpp in Sources */,
+				6C97D8A7192C0576005468B7 /* app.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +263,7 @@
 				6C976D90192BC76000C38CAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

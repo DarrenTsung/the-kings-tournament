@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CB965B04-CC95-426F-85B2-668BB2167414</string>
+	<key>IDESourceControlProjectName</key>
+	<string>The Kings Tournament</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7D529FFD-5284-4433-A42B-F65DB3B2B4AB</key>
+		<string>https://github.com/DarrenTsung/the-kings-tournament.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>The Kings Tournament.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7D529FFD-5284-4433-A42B-F65DB3B2B4AB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DarrenTsung/the-kings-tournament.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7D529FFD-5284-4433-A42B-F65DB3B2B4AB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7D529FFD-5284-4433-A42B-F65DB3B2B4AB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>the-kings-tournament</string>
+		</dict>
+	</array>
+</dict>
+</plist>
