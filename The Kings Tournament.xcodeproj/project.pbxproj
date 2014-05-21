@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C77D15A192D10CC0016D438 /* movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C77D158192D10CC0016D438 /* movement.cpp */; };
 		6C97D8CC192C33C6005468B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8CB192C33C6005468B7 /* Cocoa.framework */; };
 		6C97D8EB192C33C6005468B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8EA192C33C6005468B7 /* XCTest.framework */; };
 		6C97D8EC192C33C6005468B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8CB192C33C6005468B7 /* Cocoa.framework */; };
@@ -15,6 +16,12 @@
 		6C97D908192C3433005468B7 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D906192C3433005468B7 /* SDL2_ttf.framework */; };
 		6C97D909192C3433005468B7 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D907192C3433005468B7 /* SDL2.framework */; };
 		6C97D910192C3484005468B7 /* bitfont.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 6C97D90A192C3484005468B7 /* bitfont.TTF */; };
+		6C9EBF2D192D169800D723FD /* fighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF2B192D169800D723FD /* fighter.cpp */; };
+		6C9EBF3A192D27F400D723FD /* fighter_look.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF38192D27F400D723FD /* fighter_look.cpp */; };
+		6C9EBF3E192D2D8D00D723FD /* libentityx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9EBF3D192D2D8D00D723FD /* libentityx.a */; };
+		6C9EBF41192D2FAD00D723FD /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF3F192D2FAD00D723FD /* render.cpp */; };
+		6C9EBF46192D351100D723FD /* bear_man.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C9EBF45192D351100D723FD /* bear_man.bmp */; };
+		6C9EBF49192D431800D723FD /* stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF47192D431800D723FD /* stage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C77D158192D10CC0016D438 /* movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = movement.cpp; path = systems/movement.cpp; sourceTree = "<group>"; };
+		6C77D159192D10CC0016D438 /* movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movement.h; path = systems/movement.h; sourceTree = "<group>"; };
 		6C97D8C8192C33C6005468B7 /* The Kings Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Kings Tournament.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C97D8CB192C33C6005468B7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6C97D8CE192C33C6005468B7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -41,6 +50,20 @@
 		6C97D906192C3433005468B7 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		6C97D907192C3433005468B7 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		6C97D90A192C3484005468B7 /* bitfont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = bitfont.TTF; path = resources/bitfont.TTF; sourceTree = "<group>"; };
+		6C97D91B192C3711005468B7 /* helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = helper.h; path = resources/helper.h; sourceTree = "<group>"; };
+		6C9EBF2B192D169800D723FD /* fighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fighter.cpp; path = entities/fighter.cpp; sourceTree = "<group>"; };
+		6C9EBF2C192D169800D723FD /* fighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fighter.h; path = entities/fighter.h; sourceTree = "<group>"; };
+		6C9EBF30192D16C500D723FD /* position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = position.h; path = components/position.h; sourceTree = "<group>"; };
+		6C9EBF33192D16F300D723FD /* appearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = appearance.h; path = components/appearance/appearance.h; sourceTree = "<group>"; };
+		6C9EBF38192D27F400D723FD /* fighter_look.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fighter_look.cpp; path = components/appearance/fighter_look.cpp; sourceTree = "<group>"; };
+		6C9EBF39192D27F400D723FD /* fighter_look.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fighter_look.h; path = components/appearance/fighter_look.h; sourceTree = "<group>"; };
+		6C9EBF3D192D2D8D00D723FD /* libentityx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libentityx.a; path = "third-party/libentityx.a"; sourceTree = "<group>"; };
+		6C9EBF3F192D2FAD00D723FD /* render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = render.cpp; path = systems/render.cpp; sourceTree = "<group>"; };
+		6C9EBF40192D2FAD00D723FD /* render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = render.h; path = systems/render.h; sourceTree = "<group>"; };
+		6C9EBF42192D315200D723FD /* size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = size.h; path = components/size.h; sourceTree = "<group>"; };
+		6C9EBF45192D351100D723FD /* bear_man.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man.bmp; path = resources/bear_man.bmp; sourceTree = "<group>"; };
+		6C9EBF47192D431800D723FD /* stage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stage.cpp; path = managers/stage.cpp; sourceTree = "<group>"; };
+		6C9EBF48192D431800D723FD /* stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stage.h; path = managers/stage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +74,7 @@
 				6C97D908192C3433005468B7 /* SDL2_ttf.framework in Frameworks */,
 				6C97D909192C3433005468B7 /* SDL2.framework in Frameworks */,
 				6C97D8CC192C33C6005468B7 /* Cocoa.framework in Frameworks */,
+				6C9EBF3E192D2D8D00D723FD /* libentityx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C77D157192D0A970016D438 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6C9EBF47192D431800D723FD /* stage.cpp */,
+				6C9EBF48192D431800D723FD /* stage.h */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		6C77D15B192D10D00016D438 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				6C77D158192D10CC0016D438 /* movement.cpp */,
+				6C77D159192D10CC0016D438 /* movement.h */,
+				6C9EBF3F192D2FAD00D723FD /* render.cpp */,
+				6C9EBF40192D2FAD00D723FD /* render.h */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
 		6C97D8BF192C33C6005468B7 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +131,7 @@
 		6C97D8CA192C33C6005468B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C9EBF3D192D2D8D00D723FD /* libentityx.a */,
 				6C97D906192C3433005468B7 /* SDL2_ttf.framework */,
 				6C97D907192C3433005468B7 /* SDL2.framework */,
 				6C97D8CB192C33C6005468B7 /* Cocoa.framework */,
@@ -112,6 +157,10 @@
 				6C97D8FF192C341F005468B7 /* app.cpp */,
 				6C97D900192C341F005468B7 /* app.h */,
 				6C97D902192C341F005468B7 /* main.cpp */,
+				6C9EBF32192D16C800D723FD /* Components */,
+				6C9EBF2E192D169A00D723FD /* Entities */,
+				6C77D15B192D10D00016D438 /* Systems */,
+				6C77D157192D0A970016D438 /* Managers */,
 				6C97D8D2192C33C6005468B7 /* Resources */,
 			);
 			path = "The Kings Tournament";
@@ -120,9 +169,40 @@
 		6C97D8D2192C33C6005468B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C9EBF45192D351100D723FD /* bear_man.bmp */,
 				6C97D90A192C3484005468B7 /* bitfont.TTF */,
+				6C97D91B192C3711005468B7 /* helper.h */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		6C9EBF2E192D169A00D723FD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6C9EBF2B192D169800D723FD /* fighter.cpp */,
+				6C9EBF2C192D169800D723FD /* fighter.h */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		6C9EBF32192D16C800D723FD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6C9EBF42192D315200D723FD /* size.h */,
+				6C9EBF30192D16C500D723FD /* position.h */,
+				6C9EBF34192D16F800D723FD /* Appearance */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		6C9EBF34192D16F800D723FD /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				6C9EBF33192D16F300D723FD /* appearance.h */,
+				6C9EBF38192D27F400D723FD /* fighter_look.cpp */,
+				6C9EBF39192D27F400D723FD /* fighter_look.h */,
+			);
+			name = Appearance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9EBF46192D351100D723FD /* bear_man.bmp in Resources */,
 				6C97D910192C3484005468B7 /* bitfont.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C77D15A192D10CC0016D438 /* movement.cpp in Sources */,
 				6C97D905192C341F005468B7 /* main.cpp in Sources */,
+				6C9EBF49192D431800D723FD /* stage.cpp in Sources */,
+				6C9EBF41192D2FAD00D723FD /* render.cpp in Sources */,
+				6C9EBF2D192D169800D723FD /* fighter.cpp in Sources */,
+				6C9EBF3A192D27F400D723FD /* fighter_look.cpp in Sources */,
 				6C97D903192C341F005468B7 /* app.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +409,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
 				INFOPLIST_FILE = "";
+				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/third-party\"/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -340,7 +432,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
 				INFOPLIST_FILE = "";
+				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/third-party\"/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

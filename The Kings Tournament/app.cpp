@@ -10,13 +10,12 @@
 #include <SDL2/SDL_Timer.h>
 #include <sstream>
 #include <unistd.h>
+#include "helper.h"
 
 #define APPTITLE "The King's Tournament"
 #define FPS 60.0f
 
 #define DEBUG_MODE true
-
-
 
 Application::Application(unsigned width, unsigned height) :
     width(width),
@@ -25,7 +24,7 @@ Application::Application(unsigned width, unsigned height) :
     _paused(false),
     _debugMode(DEBUG_MODE)
 {
-    
+    _stage = Stage(this);
 }
 
 Application::~Application() {
@@ -53,6 +52,7 @@ bool Application::initialize() {
 	
 	_window = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN);
 	_renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    _stage.start();
     return true;
 }
 
@@ -61,28 +61,20 @@ void Application::run() {
 	SDL_Event event;
 	_running = true;
     
-    float delta = 1.0f/FPS, curr_time, prev_time = SDL_GetTicks();
+    double delta = 1.0f/FPS, curr_time, prev_time = SDL_GetTicks();
 	
     // Game loop
 	while (_running)
 	{
-        // ============================================================================
         // EVENT HANDLING
-        // ============================================================================
         while( SDL_PollEvent(&event) ) onEvent(&event);
         
-        // ============================================================================
-        // UPDATE LOGIC
-        // ============================================================================
-        update(delta);
-        // ============================================================================
+        // UPDATING
+        _stage.update(delta);
         // RENDERING
-        // ============================================================================
-		render();
+        render();
         
-        // ============================================================================
         // TIMING
-        // ============================================================================
         // cap the frame rate at a steady FPS frames per second
         curr_time = SDL_GetTicks();
         // wait out the rest of the extra time
@@ -106,15 +98,43 @@ void Application::onEvent(SDL_Event* event)
 			
 		case SDL_KEYDOWN:
 		{
-			if (event->key.keysym.sym == SDLK_ESCAPE)
-			{
-				_running = false;
-			}
+			switch (event->key.keysym.sym)
+            {
+                case SDLK_ESCAPE:
+    				_running = false;
+                    break;
+                case SDLK_UP:
+                    keystate.up = true;
+                    break;
+                case SDLK_DOWN:
+                    keystate.down = true;
+                    break;
+                case SDLK_RIGHT:
+                    keystate.right = true;
+                    break;
+                case SDLK_LEFT:
+                    keystate.left = true;
+                    break;
+            }
 		}
             
-            case SDL_KEYUP:
+        case SDL_KEYUP:
         {
-            
+			switch (event->key.keysym.sym)
+            {
+                case SDLK_UP:
+                    keystate.up = false;
+                    break;
+                case SDLK_DOWN:
+                    keystate.down = false;
+                    break;
+                case SDLK_RIGHT:
+                    keystate.right = false;
+                    break;
+                case SDLK_LEFT:
+                    keystate.left = false;
+                    break;
+            }
         }
 	}
 }
@@ -125,39 +145,16 @@ void Application::update(float delta) {
 
 void Application::render()
 {
-    // CLEAR THE RENDERER
-	SDL_SetRenderDrawColor(_renderer, 0x00, 0x00, 0, 0xff);
-	SDL_RenderClear(_renderer);
-    
-	int w,h;
-	SDL_GetWindowSize(_window, &w, &h);
-    
     // if the debugMode is on and there is an fps, display it
     if (_debugMode && _fps) {
-        TTF_Font *font = TTF_OpenFont("bitfont.TTF", 12);
-        if(!font) {
-            printf("TTF_OpenFont: %s\n", TTF_GetError());
-            // handle error
-        }
-        SDL_Color blackFontColor = {255, 255, 255};
         char fps_string[15];
         sprintf(fps_string, "FPS: %.1f", _fps);
-        SDL_Surface *fps_surface = TTF_RenderText_Solid(font, fps_string, blackFontColor);
+        SDL_Surface *fps_surface = helper::SurfaceForString("bitfont.TTF", std::string(fps_string), 12, {255, 255, 255});
         SDL_Texture *tex = SDL_CreateTextureFromSurface(_renderer, fps_surface);
         SDL_FreeSurface(fps_surface);
-        SDL_RenderClear(_renderer);
-        SDL_Rect target; target.w = 80; target.h = 30; target.x = 10; target.y = height - target.h - 5;
+        SDL_Rect target; target.w = 95; target.h = 30; target.x = 10; target.y = height - target.h - 5;
         SDL_RenderCopy(_renderer, tex, NULL, &target);
     }
-    
-	SDL_Rect r;
-	r.w = 200;
-	r.h = 200;
-	r.x = w/2-(r.w/2);
-	r.y = h/2-(r.h/2);
-	
-	SDL_SetRenderDrawColor(_renderer, 0xff, 0xff, 0, 0xff);
-	SDL_RenderFillRect(_renderer, &r);
 	SDL_RenderPresent(_renderer);
 }
 	

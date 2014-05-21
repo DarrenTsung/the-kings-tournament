@@ -12,6 +12,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2_ttf/SDL_ttf.h>
 #include <iostream>
+#include "stage.h"
 
 struct Keys {
     bool up = false;
@@ -39,6 +40,9 @@ public:
     unsigned width, height;
     Keys keystate;
     
+	SDL_Window *_window;
+	SDL_Renderer *_renderer;
+    
 private:
     // handle key events
     void onEvent(SDL_Event *event);
@@ -47,9 +51,7 @@ private:
     // update the application
     void update(float delta);
     
-	SDL_Window *_window;
-	SDL_Renderer *_renderer;
-    
+    Stage _stage;
     bool _running, _paused, _debugMode;
     float _fps;
 };

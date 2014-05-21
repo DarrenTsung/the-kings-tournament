@@ -5,8 +5,8 @@
 #include "app.h"
 
 // Constants
-const unsigned SCREEN_WIDTH = 800;
-const unsigned SCREEN_HEIGHT = 600;
+const unsigned SCREEN_WIDTH = 1280;
+const unsigned SCREEN_HEIGHT = 800;
 
 // Globals
 Application app(SCREEN_WIDTH, SCREEN_HEIGHT);
