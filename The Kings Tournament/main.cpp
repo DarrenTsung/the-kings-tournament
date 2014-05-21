@@ -11,6 +11,10 @@ const unsigned SCREEN_HEIGHT = 600;
 // Globals
 Application app(SCREEN_WIDTH, SCREEN_HEIGHT);
 
+#ifdef __APPLE__
+#include "CoreFoundation/CoreFoundation.h"
+#endif
+
 // ============================================================================
 // [Entry-Point]
 // ============================================================================

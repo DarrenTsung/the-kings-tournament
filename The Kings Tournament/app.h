@@ -10,6 +10,7 @@
 #define __The_Kings_Tournament__app__
 
 #include <SDL2/SDL.h>
+#include <SDL2_ttf/SDL_ttf.h>
 #include <iostream>
 
 struct Keys {
@@ -43,11 +44,14 @@ private:
     void onEvent(SDL_Event *event);
     // draw the application
     void render();
+    // update the application
+    void update(float delta);
     
 	SDL_Window *_window;
 	SDL_Renderer *_renderer;
     
-    bool _running, _paused;
+    bool _running, _paused, _debugMode;
+    float _fps;
 };
 
 #endif /* defined(__The_Kings_Tournament__app__) */

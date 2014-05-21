@@ -7,76 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C976D8B192BC76000C38CAB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C976D8A192BC76000C38CAB /* main.cpp */; };
-		6C97D8A7192C0576005468B7 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C97D8A5192C0576005468B7 /* app.cpp */; };
+		6C97D8CC192C33C6005468B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8CB192C33C6005468B7 /* Cocoa.framework */; };
+		6C97D8EB192C33C6005468B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8EA192C33C6005468B7 /* XCTest.framework */; };
+		6C97D8EC192C33C6005468B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8CB192C33C6005468B7 /* Cocoa.framework */; };
+		6C97D903192C341F005468B7 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C97D8FF192C341F005468B7 /* app.cpp */; };
+		6C97D905192C341F005468B7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C97D902192C341F005468B7 /* main.cpp */; };
+		6C97D908192C3433005468B7 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D906192C3433005468B7 /* SDL2_ttf.framework */; };
+		6C97D909192C3433005468B7 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D907192C3433005468B7 /* SDL2.framework */; };
+		6C97D910192C3484005468B7 /* bitfont.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 6C97D90A192C3484005468B7 /* bitfont.TTF */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		6C976D85192BC76000C38CAB /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+/* Begin PBXContainerItemProxy section */
+		6C97D8ED192C33C6005468B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C97D8C0192C33C6005468B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C97D8C7192C33C6005468B7;
+			remoteInfo = "The Kings Tournament";
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6C976D87192BC76000C38CAB /* The Kings Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Kings Tournament.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C976D8A192BC76000C38CAB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6C97D8A5192C0576005468B7 /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
-		6C97D8A6192C0576005468B7 /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
+		6C97D8C8192C33C6005468B7 /* The Kings Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Kings Tournament.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C97D8CB192C33C6005468B7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6C97D8CE192C33C6005468B7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6C97D8CF192C33C6005468B7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6C97D8D0192C33C6005468B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6C97D8E9192C33C6005468B7 /* The Kings TournamentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Kings TournamentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C97D8EA192C33C6005468B7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6C97D8FF192C341F005468B7 /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
+		6C97D900192C341F005468B7 /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
+		6C97D902192C341F005468B7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6C97D906192C3433005468B7 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		6C97D907192C3433005468B7 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		6C97D90A192C3484005468B7 /* bitfont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = bitfont.TTF; path = resources/bitfont.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6C976D84192BC76000C38CAB /* Frameworks */ = {
+		6C97D8C5192C33C6005468B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C97D908192C3433005468B7 /* SDL2_ttf.framework in Frameworks */,
+				6C97D909192C3433005468B7 /* SDL2.framework in Frameworks */,
+				6C97D8CC192C33C6005468B7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C97D8E6192C33C6005468B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C97D8EC192C33C6005468B7 /* Cocoa.framework in Frameworks */,
+				6C97D8EB192C33C6005468B7 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6C976D7E192BC76000C38CAB = {
+		6C97D8BF192C33C6005468B7 = {
 			isa = PBXGroup;
 			children = (
-				6C976D89192BC76000C38CAB /* The Kings Tournament */,
-				6C976D88192BC76000C38CAB /* Products */,
+				6C97D8D1192C33C6005468B7 /* The Kings Tournament */,
+				6C97D8CA192C33C6005468B7 /* Frameworks */,
+				6C97D8C9192C33C6005468B7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6C976D88192BC76000C38CAB /* Products */ = {
+		6C97D8C9192C33C6005468B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C976D87192BC76000C38CAB /* The Kings Tournament.app */,
+				6C97D8C8192C33C6005468B7 /* The Kings Tournament.app */,
+				6C97D8E9192C33C6005468B7 /* The Kings TournamentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6C976D89192BC76000C38CAB /* The Kings Tournament */ = {
+		6C97D8CA192C33C6005468B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C976D8A192BC76000C38CAB /* main.cpp */,
-				6C97D8A5192C0576005468B7 /* app.cpp */,
-				6C97D8A6192C0576005468B7 /* app.h */,
+				6C97D906192C3433005468B7 /* SDL2_ttf.framework */,
+				6C97D907192C3433005468B7 /* SDL2.framework */,
+				6C97D8CB192C33C6005468B7 /* Cocoa.framework */,
+				6C97D8EA192C33C6005468B7 /* XCTest.framework */,
+				6C97D8CD192C33C6005468B7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C97D8CD192C33C6005468B7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C97D8CE192C33C6005468B7 /* AppKit.framework */,
+				6C97D8CF192C33C6005468B7 /* CoreData.framework */,
+				6C97D8D0192C33C6005468B7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6C97D8D1192C33C6005468B7 /* The Kings Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				6C97D8FF192C341F005468B7 /* app.cpp */,
+				6C97D900192C341F005468B7 /* app.h */,
+				6C97D902192C341F005468B7 /* main.cpp */,
+				6C97D8D2192C33C6005468B7 /* Resources */,
 			);
 			path = "The Kings Tournament";
+			sourceTree = "<group>";
+		};
+		6C97D8D2192C33C6005468B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6C97D90A192C3484005468B7 /* bitfont.TTF */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6C976D86192BC76000C38CAB /* The Kings Tournament */ = {
+		6C97D8C7192C33C6005468B7 /* The Kings Tournament */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C976D8E192BC76000C38CAB /* Build configuration list for PBXNativeTarget "The Kings Tournament" */;
+			buildConfigurationList = 6C97D8F9192C33C6005468B7 /* Build configuration list for PBXNativeTarget "The Kings Tournament" */;
 			buildPhases = (
-				6C976D83192BC76000C38CAB /* Sources */,
-				6C976D84192BC76000C38CAB /* Frameworks */,
-				6C976D85192BC76000C38CAB /* CopyFiles */,
+				6C97D8C4192C33C6005468B7 /* Sources */,
+				6C97D8C5192C33C6005468B7 /* Frameworks */,
+				6C97D8C6192C33C6005468B7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,49 +142,107 @@
 			);
 			name = "The Kings Tournament";
 			productName = "The Kings Tournament";
-			productReference = 6C976D87192BC76000C38CAB /* The Kings Tournament.app */;
+			productReference = 6C97D8C8192C33C6005468B7 /* The Kings Tournament.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6C97D8E8192C33C6005468B7 /* The Kings TournamentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C97D8FC192C33C6005468B7 /* Build configuration list for PBXNativeTarget "The Kings TournamentTests" */;
+			buildPhases = (
+				6C97D8E5192C33C6005468B7 /* Sources */,
+				6C97D8E6192C33C6005468B7 /* Frameworks */,
+				6C97D8E7192C33C6005468B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C97D8EE192C33C6005468B7 /* PBXTargetDependency */,
+			);
+			name = "The Kings TournamentTests";
+			productName = "The Kings TournamentTests";
+			productReference = 6C97D8E9192C33C6005468B7 /* The Kings TournamentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6C976D7F192BC76000C38CAB /* Project object */ = {
+		6C97D8C0192C33C6005468B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Lambawoof;
+				TargetAttributes = {
+					6C97D8E8192C33C6005468B7 = {
+						TestTargetID = 6C97D8C7192C33C6005468B7;
+					};
+				};
 			};
-			buildConfigurationList = 6C976D82192BC76000C38CAB /* Build configuration list for PBXProject "The Kings Tournament" */;
+			buildConfigurationList = 6C97D8C3192C33C6005468B7 /* Build configuration list for PBXProject "The Kings Tournament" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 6C976D7E192BC76000C38CAB;
-			productRefGroup = 6C976D88192BC76000C38CAB /* Products */;
+			mainGroup = 6C97D8BF192C33C6005468B7;
+			productRefGroup = 6C97D8C9192C33C6005468B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6C976D86192BC76000C38CAB /* The Kings Tournament */,
+				6C97D8C7192C33C6005468B7 /* The Kings Tournament */,
+				6C97D8E8192C33C6005468B7 /* The Kings TournamentTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		6C97D8C6192C33C6005468B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C97D910192C3484005468B7 /* bitfont.TTF in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C97D8E7192C33C6005468B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		6C976D83192BC76000C38CAB /* Sources */ = {
+		6C97D8C4192C33C6005468B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C976D8B192BC76000C38CAB /* main.cpp in Sources */,
-				6C97D8A7192C0576005468B7 /* app.cpp in Sources */,
+				6C97D905192C341F005468B7 /* main.cpp in Sources */,
+				6C97D903192C341F005468B7 /* app.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C97D8E5192C33C6005468B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6C97D8EE192C33C6005468B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C97D8C7192C33C6005468B7 /* The Kings Tournament */;
+			targetProxy = 6C97D8ED192C33C6005468B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		6C976D8C192BC76000C38CAB /* Debug */ = {
+		6C97D8F7192C33C6005468B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -164,7 +280,7 @@
 			};
 			name = Debug;
 		};
-		6C976D8D192BC76000C38CAB /* Release */ = {
+		6C97D8F8192C33C6005468B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -196,76 +312,111 @@
 			};
 			name = Release;
 		};
-		6C976D8F192BC76000C38CAB /* Debug */ = {
+		6C97D8FA192C33C6005468B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/include,
-					/usr/local/include,
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/opt/local/lib,
-					/usr/lib,
-				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					cocoa,
-					"-framework",
-					SDL2,
-				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		6C976D90192BC76000C38CAB /* Release */ = {
+		6C97D8FB192C33C6005468B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/include,
-					/usr/local/include,
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/opt/local/lib,
-					/usr/lib,
-				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					cocoa,
-					"-framework",
-					SDL2,
-				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6C97D8FD192C33C6005468B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/The Kings Tournament.app/Contents/MacOS/The Kings Tournament";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "The Kings Tournament/The Kings Tournament-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The Kings TournamentTests/The Kings TournamentTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6C97D8FE192C33C6005468B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/The Kings Tournament.app/Contents/MacOS/The Kings Tournament";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "The Kings Tournament/The Kings Tournament-Prefix.pch";
+				INFOPLIST_FILE = "The Kings TournamentTests/The Kings TournamentTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6C976D82192BC76000C38CAB /* Build configuration list for PBXProject "The Kings Tournament" */ = {
+		6C97D8C3192C33C6005468B7 /* Build configuration list for PBXProject "The Kings Tournament" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6C976D8C192BC76000C38CAB /* Debug */,
-				6C976D8D192BC76000C38CAB /* Release */,
+				6C97D8F7192C33C6005468B7 /* Debug */,
+				6C97D8F8192C33C6005468B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C976D8E192BC76000C38CAB /* Build configuration list for PBXNativeTarget "The Kings Tournament" */ = {
+		6C97D8F9192C33C6005468B7 /* Build configuration list for PBXNativeTarget "The Kings Tournament" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6C976D8F192BC76000C38CAB /* Debug */,
-				6C976D90192BC76000C38CAB /* Release */,
+				6C97D8FA192C33C6005468B7 /* Debug */,
+				6C97D8FB192C33C6005468B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C97D8FC192C33C6005468B7 /* Build configuration list for PBXNativeTarget "The Kings TournamentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C97D8FD192C33C6005468B7 /* Debug */,
+				6C97D8FE192C33C6005468B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6C976D7F192BC76000C38CAB /* Project object */;
+	rootObject = 6C97D8C0192C33C6005468B7 /* Project object */;
 }
