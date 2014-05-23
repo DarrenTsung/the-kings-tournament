@@ -9,6 +9,7 @@
 #include "stage.h"
 #include "movement.h"
 #include "render.h"
+#include "input.h"
 #include "app.h"
 
 Stage::Stage() {}
@@ -26,8 +27,9 @@ void Stage::start() {
 }
 
 void Stage::configure() {
-    systems.add<MovementSystem>();
+    systems.add<MovementSystem>(&playerOne);
     systems.add<RenderSystem>(app->_renderer, app->_window);
+    systems.add<InputSystem>(app);
 }
 
 void Stage::initialize() {
@@ -36,6 +38,7 @@ void Stage::initialize() {
 }
 
 void Stage::update(double dt) {
+    systems.update<InputSystem>(dt);
     systems.update<MovementSystem>(dt);
     systems.update<RenderSystem>(dt);
     

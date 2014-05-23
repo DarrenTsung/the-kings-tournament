@@ -11,8 +11,11 @@
 
 #include <iostream>
 #include "appearance.h"
+#include "fighter.h"
 
 struct Fighter_look : Appearance {
+    Fighter_look(Fighter *ft) : _fighter(ft) {}
+    
     SDL_Surface* render(float dt);
     
     float get_width();
@@ -21,6 +24,8 @@ struct Fighter_look : Appearance {
 private:
     SDL_Surface* bmp();
     SDL_Surface* _bmp;
+    
+    Fighter* _fighter;
 };
 
 #endif /* defined(__The_Kings_Tournament__fighter_look__) */

@@ -90,6 +90,7 @@ void Application::run() {
 
 void Application::onEvent(SDL_Event* event)
 {
+    SDL_Event *wtf = event;
 	switch (event->type)
 	{
 		case SDL_QUIT:
@@ -113,9 +114,11 @@ void Application::onEvent(SDL_Event* event)
                     keystate.right = true;
                     break;
                 case SDLK_LEFT:
+                    wtf = event;
                     keystate.left = true;
                     break;
             }
+            break;
 		}
             
         case SDL_KEYUP:
@@ -132,9 +135,11 @@ void Application::onEvent(SDL_Event* event)
                     keystate.right = false;
                     break;
                 case SDLK_LEFT:
+                    wtf = event;
                     keystate.left = false;
                     break;
             }
+            break;
         }
 	}
 }

@@ -17,6 +17,9 @@ enum StartPosition {
     RIGHT = 1
 };
 
+enum class Direction { LEFT, RIGHT };
+enum class State { IN_AIR, GROUND };
+
 /**
  Fighter class representing the characters in the game
  */
@@ -30,13 +33,24 @@ public:
     
     void update(double dt);
     
+    std::string current_frame();
+    
+    /**
+     Move the character according to input
+     */
+    void move_left();
+    void move_right();
+    
     Fighter& operator=(const Fighter& other);
     
 private:
     entityx::Entity _entity;
     entityx::EntityManager *_manager;
     
+    float _moveSpeed;
     StartPosition _startingPosition;
+    Direction _facing;
+    State _state;
 };
 
 #endif /* defined(__The_Kings_Tournament__fighter__) */

@@ -22,6 +22,8 @@
 		6C9EBF41192D2FAD00D723FD /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF3F192D2FAD00D723FD /* render.cpp */; };
 		6C9EBF46192D351100D723FD /* bear_man.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C9EBF45192D351100D723FD /* bear_man.bmp */; };
 		6C9EBF49192D431800D723FD /* stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF47192D431800D723FD /* stage.cpp */; };
+		6C9EBF4C192D4DFA00D723FD /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF4A192D4DFA00D723FD /* input.cpp */; };
+		6C9EBF54192D539900D723FD /* bear_man.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C9EBF53192D539900D723FD /* bear_man.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,12 @@
 		6C9EBF45192D351100D723FD /* bear_man.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man.bmp; path = resources/bear_man.bmp; sourceTree = "<group>"; };
 		6C9EBF47192D431800D723FD /* stage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stage.cpp; path = managers/stage.cpp; sourceTree = "<group>"; };
 		6C9EBF48192D431800D723FD /* stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stage.h; path = managers/stage.h; sourceTree = "<group>"; };
+		6C9EBF4A192D4DFA00D723FD /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = input.cpp; path = systems/input.cpp; sourceTree = "<group>"; };
+		6C9EBF4B192D4DFA00D723FD /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = input.h; path = systems/input.h; sourceTree = "<group>"; };
+		6C9EBF4E192D4FB600D723FD /* playerinput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = playerinput.h; sourceTree = "<group>"; };
+		6C9EBF50192D51E000D723FD /* identity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = identity.h; sourceTree = "<group>"; };
+		6C9EBF53192D539900D723FD /* bear_man.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bear_man.plist; path = entities/fighters/bear_man.plist; sourceTree = "<group>"; };
+		6C9EBF56192D550800D723FD /* velocity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = velocity.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,8 @@
 				6C77D159192D10CC0016D438 /* movement.h */,
 				6C9EBF3F192D2FAD00D723FD /* render.cpp */,
 				6C9EBF40192D2FAD00D723FD /* render.h */,
+				6C9EBF4A192D4DFA00D723FD /* input.cpp */,
+				6C9EBF4B192D4DFA00D723FD /* input.h */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -157,6 +167,7 @@
 				6C97D8FF192C341F005468B7 /* app.cpp */,
 				6C97D900192C341F005468B7 /* app.h */,
 				6C97D902192C341F005468B7 /* main.cpp */,
+				6C9EBF4F192D4FBB00D723FD /* Events */,
 				6C9EBF32192D16C800D723FD /* Components */,
 				6C9EBF2E192D169A00D723FD /* Entities */,
 				6C77D15B192D10D00016D438 /* Systems */,
@@ -181,6 +192,7 @@
 			children = (
 				6C9EBF2B192D169800D723FD /* fighter.cpp */,
 				6C9EBF2C192D169800D723FD /* fighter.h */,
+				6C9EBF55192D539D00D723FD /* Fighters */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -188,9 +200,11 @@
 		6C9EBF32192D16C800D723FD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				6C9EBF42192D315200D723FD /* size.h */,
-				6C9EBF30192D16C500D723FD /* position.h */,
 				6C9EBF34192D16F800D723FD /* Appearance */,
+				6C9EBF42192D315200D723FD /* size.h */,
+				6C9EBF50192D51E000D723FD /* identity.h */,
+				6C9EBF56192D550800D723FD /* velocity.h */,
+				6C9EBF30192D16C500D723FD /* position.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -203,6 +217,22 @@
 				6C9EBF39192D27F400D723FD /* fighter_look.h */,
 			);
 			name = Appearance;
+			sourceTree = "<group>";
+		};
+		6C9EBF4F192D4FBB00D723FD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				6C9EBF4E192D4FB600D723FD /* playerinput.h */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		6C9EBF55192D539D00D723FD /* Fighters */ = {
+			isa = PBXGroup;
+			children = (
+				6C9EBF53192D539900D723FD /* bear_man.plist */,
+			);
+			name = Fighters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +313,7 @@
 			files = (
 				6C9EBF46192D351100D723FD /* bear_man.bmp in Resources */,
 				6C97D910192C3484005468B7 /* bitfont.TTF in Resources */,
+				6C9EBF54192D539900D723FD /* bear_man.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +333,7 @@
 			files = (
 				6C77D15A192D10CC0016D438 /* movement.cpp in Sources */,
 				6C97D905192C341F005468B7 /* main.cpp in Sources */,
+				6C9EBF4C192D4DFA00D723FD /* input.cpp in Sources */,
 				6C9EBF49192D431800D723FD /* stage.cpp in Sources */,
 				6C9EBF41192D2FAD00D723FD /* render.cpp in Sources */,
 				6C9EBF2D192D169800D723FD /* fighter.cpp in Sources */,

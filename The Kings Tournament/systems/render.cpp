@@ -30,7 +30,7 @@ void RenderSystem::update(entityx::EntityManager &es, entityx::EventManager &eve
             std::cout << "SDL_CreateTextureFromSurface Error: "
             << SDL_GetError() << std::endl;
         }
-        SDL_Rect target; target.w = size->width; target.h = size->height; target.x = pos->x; target.y = h - pos->y;
+        SDL_Rect target; target.w = size->width; target.h = size->height; target.x = pos->x; target.y = (float)h - pos->y;
         SDL_RenderCopy(_renderer, tex, NULL, &target);
     }
 }
