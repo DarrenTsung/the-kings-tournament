@@ -39,6 +39,9 @@ Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     Sprite *a2 = new Sprite("bear_man_walk_right.bmp", renderer, 4, 180, 0.2);
     _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
          std::make_pair(Animation::WALK, Direction::RIGHT), a2));
+    Sprite *a3 = new Sprite("bear_man_backwalk_right.bmp", renderer, 4, 180, 0.3);
+    _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
+         std::make_pair(Animation::BACKWALK, Direction::RIGHT), a3));
     
     // idle sprite is start animation
     currentAnimation = Animation::IDLE;
@@ -101,8 +104,9 @@ void Fighter::update(double dt) {
             
             // friction, velocity decreases by fraction every second
             // INTEGRATION PROBLEMS I KNOW FIX LATER
-            vel->x -= dt*2*_moveSpeed;
-            if (vel->x < 10) {
+            float change = vel->x > 0 ? -dt*2*_moveSpeed : dt*2*_moveSpeed;
+            vel->x += change;
+            if (abs(vel->x) < 10) {
                 vel->x = 0;
                 if (currentAnimation != Animation::IDLE)
                     switchAnimation(Animation::IDLE);
@@ -124,8 +128,9 @@ void Fighter::move_left() {
         if (_facing == Direction::LEFT) {
             vel->x = _moveSpeed;
         } else {
-            // TURN HERE
-            _facing = Direction::LEFT;
+            vel->x = -_moveSpeed;
+            if (currentAnimation != Animation::BACKWALK)
+                switchAnimation(Animation::BACKWALK);
         }
     }
 }

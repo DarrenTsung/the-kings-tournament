@@ -26,6 +26,7 @@ enum class State { IN_AIR, GROUND };
 enum class Animation {
     IDLE,
     WALK,
+    BACKWALK,
 };
 
 /**
