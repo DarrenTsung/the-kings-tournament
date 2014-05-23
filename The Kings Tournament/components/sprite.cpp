@@ -31,6 +31,11 @@ Sprite::Sprite(std::string filename, SDL_Renderer *renderer, unsigned frameCount
     SDL_FreeSurface(_bmp);
 }
 
+void Sprite::reset() {
+    _currFrame = 0;
+    _frameTimer = 0;
+}
+
 unsigned Sprite::currentFrame() {
     return _currFrame;
 }

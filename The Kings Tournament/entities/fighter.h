@@ -12,6 +12,7 @@
 #include <iostream>
 #include <entityx/entityx.h>
 #include <vector>
+#include <map>
 #include "sprite.h"
 
 enum StartPosition {
@@ -21,6 +22,11 @@ enum StartPosition {
 
 enum class Direction { LEFT, RIGHT };
 enum class State { IN_AIR, GROUND };
+
+enum class Animation {
+    IDLE,
+    WALK,
+};
 
 /**
  Fighter class representing the characters in the game
@@ -41,13 +47,19 @@ public:
     void move_left();
     void move_right();
     
+    // gets the sprite instance currently playing
+    Sprite* currentSprite();
+    
     Fighter& operator=(const Fighter& other);
-    std::vector<Sprite*> animations;
-    unsigned currSprite;
+    Animation currentAnimation;
     
 private:
+    void switchAnimation(Animation animationToSwitchTo);
     entityx::Entity _entity;
     entityx::EntityManager *_manager;
+    
+    // maps animations to their id (key) to the sprite
+    std::map<std::pair<Animation, Direction>, Sprite*> _animationMap;
     
     float _moveSpeed;
     StartPosition _startingPosition;

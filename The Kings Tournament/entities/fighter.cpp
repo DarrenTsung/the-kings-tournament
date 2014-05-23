@@ -22,21 +22,43 @@ Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     _moveSpeed = 60.0f;
     _state = State::GROUND;
     
+    switch(_startingPosition) {
+        case LEFT:
+            _facing = Direction::RIGHT;
+            break;
+        case RIGHT:
+            _facing = Direction::LEFT;
+            break;
+    }
+    
     // filename, renderer, frame count, frame width, delay (ms) 
-    Sprite *a1 = new Sprite("bear_man_idleframes.bmp", renderer, 4, 180, 0.2);
-    animations.push_back(a1);
+    Sprite *a1 = new Sprite("bear_man_idle_right.bmp", renderer, 4, 180, 0.2);
+    // keys are (animation type, direction)
+    _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
+         std::make_pair(Animation::IDLE, Direction::RIGHT), a1));
+    Sprite *a2 = new Sprite("bear_man_walk_right.bmp", renderer, 4, 180, 0.2);
+    _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
+         std::make_pair(Animation::WALK, Direction::RIGHT), a2));
+    
     // idle sprite is start animation
-    currSprite = 0;
+    currentAnimation = Animation::IDLE;
 }
 
 Fighter& Fighter::operator=(const Fighter& other) {
     _startingPosition = other._startingPosition;
     _moveSpeed = other._moveSpeed;
     _state = other._state;
-    currSprite = other.currSprite;
     
-    animations = other.animations;
+    _facing = other._facing;
+    _startingPosition = other._startingPosition;
+    
+    currentAnimation = other.currentAnimation;
+    _animationMap = other._animationMap;
     return *this;
+}
+
+Sprite* Fighter::currentSprite() {
+    return _animationMap[std::make_pair(currentAnimation, _facing)];
 }
 
 void Fighter::initialize(entityx::EntityManager *es, entityx::EventManager *events) {
@@ -46,8 +68,8 @@ void Fighter::initialize(entityx::EntityManager *es, entityx::EventManager *even
     //_entity.assign<Identity>(EntityIdentity::Fighter);
     _entity.assign<Fighter_look>(this);
     
-    float w = animations[0]->frameWidth;
-    float h = animations[0]->frameHeight;
+    float w = currentSprite()->frameWidth;
+    float h = currentSprite()->frameHeight;
     
     _entity.assign<Size>(w, h);
     switch (_startingPosition)
@@ -75,18 +97,16 @@ void Fighter::update(double dt) {
             float dtPos_x = dt * vel->x;
             // switch position change if facing left (a positive change adds negative x)
             if (_facing == Direction::LEFT) dtPos_x *= -1;
-            if (dtPos_x > 0.0) {
-                std::cout << "dtPos : " << dtPos_x << std::endl;
-            }
             pos->x += dtPos_x;
             
             // friction, velocity decreases by fraction every second
             // INTEGRATION PROBLEMS I KNOW FIX LATER
             vel->x -= dt*2*_moveSpeed;
-            if (vel->x > 0.0) {
-                std::cout << "xVel : " << vel->x << std::endl;
+            if (vel->x < 10) {
+                vel->x = 0;
+                if (currentAnimation != Animation::IDLE)
+                    switchAnimation(Animation::IDLE);
             }
-            if (vel->x < 10) vel->x = 0;
             break;
         }
         case State::IN_AIR:
@@ -116,9 +136,16 @@ void Fighter::move_right() {
         entityx::ComponentHandle<Velocity> vel = _entity.component<Velocity>();
         if (_facing == Direction::RIGHT) {
             vel->x = _moveSpeed;
+            if (currentAnimation != Animation::WALK)
+                switchAnimation(Animation::WALK);
         } else {
             // TURN HERE
             _facing = Direction::RIGHT;
         }
     }
+}
+
+void Fighter::switchAnimation(Animation animationToSwitchTo) {
+    currentAnimation = animationToSwitchTo;
+    _animationMap[std::make_pair(currentAnimation, _facing)]->reset();
 }

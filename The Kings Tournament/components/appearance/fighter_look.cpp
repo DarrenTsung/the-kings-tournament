@@ -9,16 +9,16 @@
 #include "fighter_look.h"
 
 SDL_Texture* Fighter_look::texture() {
-    Sprite *currSprite = _fighter->animations[_fighter->currSprite];
+    Sprite *currSprite = _fighter->currentSprite();
     return currSprite->animationTexture;
 }
 
 SDL_Rect Fighter_look::rect() {
-    Sprite *currSprite = _fighter->animations[_fighter->currSprite];
+    Sprite *currSprite = _fighter->currentSprite();
     return currSprite->currentFrameRect();
 }
 
 void Fighter_look::update(double dt) {
-    Sprite *currSprite = _fighter->animations[_fighter->currSprite];
+    Sprite *currSprite = _fighter->currentSprite();
     currSprite->update(dt);
 }

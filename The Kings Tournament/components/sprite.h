@@ -42,6 +42,11 @@ public:
      */
     void update(double dt);
     
+    /**
+     resets the current state of the animation, ie sets current frame to 0 and frame timer to 0
+     */
+    void reset();
+    
     
     SDL_Texture *animationTexture;
     unsigned frameHeight, frameWidth;
