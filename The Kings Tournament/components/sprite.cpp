@@ -19,6 +19,9 @@ Sprite::Sprite(std::string filename, SDL_Renderer *renderer, unsigned frameCount
     if (_bmp == nullptr){
         std::cout << "SDL_LoadBMP Error: " << SDL_GetError() << std::endl;
     }
+    // set color for transparency
+    SDL_SetColorKey(_bmp, SDL_TRUE, SDL_MapRGB(_bmp->format, 255, 14, 247));
+    
     animationTexture = SDL_CreateTextureFromSurface(renderer, _bmp);
     if (animationTexture == nullptr){
         std::cout << "SDL_CreateTextureFromSurface Error: "

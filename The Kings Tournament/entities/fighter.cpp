@@ -46,8 +46,8 @@ void Fighter::initialize(entityx::EntityManager *es, entityx::EventManager *even
     //_entity.assign<Identity>(EntityIdentity::Fighter);
     _entity.assign<Fighter_look>(this);
     
-    float w = _entity.component<Fighter_look>()->get_width();
-    float h = _entity.component<Fighter_look>()->get_height();
+    float w = animations[0]->frameWidth;
+    float h = animations[0]->frameHeight;
     
     _entity.assign<Size>(w, h);
     switch (_startingPosition)

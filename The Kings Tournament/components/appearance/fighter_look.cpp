@@ -22,22 +22,3 @@ void Fighter_look::update(double dt) {
     Sprite *currSprite = _fighter->animations[_fighter->currSprite];
     currSprite->update(dt);
 }
-
-float Fighter_look::get_height() {
-    return bmp()->h;
-}
-
-float Fighter_look::get_width() {
-    return bmp()->w;
-}
-
-SDL_Surface* Fighter_look::bmp() {
-    if (!_bmp) {
-        _bmp = SDL_LoadBMP("bear_man.bmp");
-        if (_bmp == nullptr){
-            std::cout << "SDL_LoadBMP Error: " << SDL_GetError() << std::endl;
-            return nullptr;
-        }
-    }
-    return _bmp;
-}

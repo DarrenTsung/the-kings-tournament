@@ -21,13 +21,7 @@ struct Fighter_look : Appearance {
     
     void update(double dt);
     
-    float get_width();
-    float get_height();
-    
 private:
-    SDL_Surface* bmp();
-    SDL_Surface* _bmp;
-    
     Fighter* _fighter;
 };
 
