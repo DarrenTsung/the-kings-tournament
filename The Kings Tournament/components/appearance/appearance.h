@@ -11,10 +11,13 @@
 
 #include <entityx/entityx.h>
 #include <SDL2/SDL.h>
+#include "sprite.h"
 
 struct Appearance : entityx::Component<Appearance> {
-    virtual SDL_Surface* render(float dt) { SDL_Surface m; return &m; }
-    virtual void render(entityx::Entity entity, float dt) { render(dt); }
+    virtual SDL_Texture* texture() { return nullptr; }
+    virtual SDL_Rect rect() {SDL_Rect t; return t;}
+    
+    virtual void update(double dt) {}
 };
 
 #endif

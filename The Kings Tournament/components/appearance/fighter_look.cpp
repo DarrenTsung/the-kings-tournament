@@ -8,8 +8,19 @@
 
 #include "fighter_look.h"
 
-SDL_Surface* Fighter_look::render(float dt) {
-    return bmp();
+SDL_Texture* Fighter_look::texture() {
+    Sprite *currSprite = _fighter->animations[_fighter->currSprite];
+    return currSprite->animationTexture;
+}
+
+SDL_Rect Fighter_look::rect() {
+    Sprite *currSprite = _fighter->animations[_fighter->currSprite];
+    return currSprite->currentFrameRect();
+}
+
+void Fighter_look::update(double dt) {
+    Sprite *currSprite = _fighter->animations[_fighter->currSprite];
+    currSprite->update(dt);
 }
 
 float Fighter_look::get_height() {

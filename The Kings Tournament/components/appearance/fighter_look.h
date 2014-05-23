@@ -16,7 +16,10 @@
 struct Fighter_look : Appearance {
     Fighter_look(Fighter *ft) : _fighter(ft) {}
     
-    SDL_Surface* render(float dt);
+    SDL_Texture* texture();
+    SDL_Rect rect();
+    
+    void update(double dt);
     
     float get_width();
     float get_height();

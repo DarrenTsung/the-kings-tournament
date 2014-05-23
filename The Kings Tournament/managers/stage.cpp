@@ -33,7 +33,7 @@ void Stage::configure() {
 }
 
 void Stage::initialize() {
-    playerOne = Fighter(LEFT);
+    playerOne = Fighter(LEFT, app->_renderer);
     playerOne.initialize(&entities, &events);
 }
 

@@ -24,13 +24,12 @@ void RenderSystem::update(entityx::EntityManager &es, entityx::EventManager &eve
         entityx::ComponentHandle<Size> size = entity.component<Size>();
         entityx::ComponentHandle<Position> pos = entity.component<Position>();
         
-        SDL_Surface *render_surface = appearance->render(dt);
-        SDL_Texture *tex = SDL_CreateTextureFromSurface(_renderer, render_surface);
-        if (tex == nullptr){
-            std::cout << "SDL_CreateTextureFromSurface Error: "
-            << SDL_GetError() << std::endl;
-        }
-        SDL_Rect target; target.w = size->width; target.h = size->height; target.x = pos->x; target.y = (float)h - pos->y;
-        SDL_RenderCopy(_renderer, tex, NULL, &target);
+        appearance->update(dt);
+        SDL_Texture *tex = appearance->texture();
+        SDL_Rect srcTarget = appearance->rect();
+        SDL_Rect destTarget;
+        destTarget.w = srcTarget.w; destTarget.h = srcTarget.h;
+        destTarget.x = pos->x; destTarget.y = (float)h - pos->y;
+        SDL_RenderCopy(_renderer, tex, &srcTarget, &destTarget);
     }
 }

@@ -11,6 +11,8 @@
 
 #include <iostream>
 #include <entityx/entityx.h>
+#include <vector>
+#include "sprite.h"
 
 enum StartPosition {
     LEFT = 0,
@@ -27,13 +29,11 @@ class Fighter {
 public:
     // constructors
     Fighter() {}
-    Fighter(StartPosition pos);
+    Fighter(StartPosition pos, SDL_Renderer *renderer);
     
     void initialize(entityx::EntityManager *es, entityx::EventManager *events);
     
     void update(double dt);
-    
-    std::string current_frame();
     
     /**
      Move the character according to input
@@ -42,6 +42,8 @@ public:
     void move_right();
     
     Fighter& operator=(const Fighter& other);
+    std::vector<Sprite*> animations;
+    unsigned currSprite;
     
 private:
     entityx::Entity _entity;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C72A383192EC7B700987691 /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C72A381192EC7B700987691 /* sprite.cpp */; };
+		6C72A387192ED52000987691 /* bear_man_idleframes.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A386192ED52000987691 /* bear_man_idleframes.bmp */; };
 		6C77D15A192D10CC0016D438 /* movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C77D158192D10CC0016D438 /* movement.cpp */; };
 		6C97D8CC192C33C6005468B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8CB192C33C6005468B7 /* Cocoa.framework */; };
 		6C97D8EB192C33C6005468B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8EA192C33C6005468B7 /* XCTest.framework */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C72A381192EC7B700987691 /* sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sprite.cpp; path = components/sprite.cpp; sourceTree = "<group>"; };
+		6C72A382192EC7B700987691 /* sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sprite.h; path = components/sprite.h; sourceTree = "<group>"; };
+		6C72A386192ED52000987691 /* bear_man_idleframes.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_idleframes.bmp; path = resources/bear_man_idleframes.bmp; sourceTree = "<group>"; };
 		6C77D158192D10CC0016D438 /* movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = movement.cpp; path = systems/movement.cpp; sourceTree = "<group>"; };
 		6C77D159192D10CC0016D438 /* movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movement.h; path = systems/movement.h; sourceTree = "<group>"; };
 		6C97D8C8192C33C6005468B7 /* The Kings Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Kings Tournament.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +185,7 @@
 		6C97D8D2192C33C6005468B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C72A386192ED52000987691 /* bear_man_idleframes.bmp */,
 				6C9EBF45192D351100D723FD /* bear_man.bmp */,
 				6C97D90A192C3484005468B7 /* bitfont.TTF */,
 				6C97D91B192C3711005468B7 /* helper.h */,
@@ -200,6 +206,8 @@
 		6C9EBF32192D16C800D723FD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6C72A381192EC7B700987691 /* sprite.cpp */,
+				6C72A382192EC7B700987691 /* sprite.h */,
 				6C9EBF34192D16F800D723FD /* Appearance */,
 				6C9EBF42192D315200D723FD /* size.h */,
 				6C9EBF50192D51E000D723FD /* identity.h */,
@@ -311,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C72A387192ED52000987691 /* bear_man_idleframes.bmp in Resources */,
 				6C9EBF46192D351100D723FD /* bear_man.bmp in Resources */,
 				6C97D910192C3484005468B7 /* bitfont.TTF in Resources */,
 				6C9EBF54192D539900D723FD /* bear_man.plist in Resources */,
@@ -339,6 +348,7 @@
 				6C9EBF2D192D169800D723FD /* fighter.cpp in Sources */,
 				6C9EBF3A192D27F400D723FD /* fighter_look.cpp in Sources */,
 				6C97D903192C341F005468B7 /* app.cpp in Sources */,
+				6C72A383192EC7B700987691 /* sprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

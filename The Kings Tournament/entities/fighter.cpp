@@ -12,14 +12,31 @@
 #include "identity.h"
 #include "velocity.h"
 #include "fighter_look.h"
+#include "app.h"
 
 #define SCREEN_WIDTH 1280
 
-Fighter::Fighter(StartPosition pos) :
+Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     _startingPosition(pos)
 {
     _moveSpeed = 60.0f;
     _state = State::GROUND;
+    
+    // filename, renderer, frame count, frame width, delay (ms) 
+    Sprite *a1 = new Sprite("bear_man_idleframes.bmp", renderer, 4, 180, 0.2);
+    animations.push_back(a1);
+    // idle sprite is start animation
+    currSprite = 0;
+}
+
+Fighter& Fighter::operator=(const Fighter& other) {
+    _startingPosition = other._startingPosition;
+    _moveSpeed = other._moveSpeed;
+    _state = other._state;
+    currSprite = other.currSprite;
+    
+    animations = other.animations;
+    return *this;
 }
 
 void Fighter::initialize(entityx::EntityManager *es, entityx::EventManager *events) {
@@ -104,15 +121,4 @@ void Fighter::move_right() {
             _facing = Direction::RIGHT;
         }
     }
-}
-
-std::string Fighter::current_frame() {
-    return "bear_map.bmp";
-}
-
-Fighter& Fighter::operator=(const Fighter& other) {
-    _startingPosition = other._startingPosition;
-    _moveSpeed = other._moveSpeed;
-    _state = other._state;
-    return *this;
 }
