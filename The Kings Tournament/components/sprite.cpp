@@ -12,7 +12,10 @@ Sprite::Sprite(std::string filename, SDL_Renderer *renderer, unsigned frameCount
     _frameCount(frameCount),
     frameWidth(frameWidth),
     _delay(delay),
-    _currFrame(0)
+    _currFrame(0),
+    _frameTimer(0.0),
+    _delegate(nullptr),
+    _myCallback(nullptr)
 {
     // create the texture from the file
     SDL_Surface *_bmp = SDL_LoadBMP(filename.c_str());
@@ -40,6 +43,15 @@ unsigned Sprite::currentFrame() {
     return _currFrame;
 }
 
+void Sprite::set_callback(CallbackType callback, Fighter* delegate) {
+    _myCallback = callback;
+    _delegate = delegate;
+}
+
+void Sprite::update_delegate(Fighter *newDelegate) {
+    _delegate = newDelegate;
+}
+
 SDL_Rect Sprite::currentFrameRect() {
     SDL_Rect target;
     target.w = frameWidth;
@@ -54,9 +66,14 @@ void Sprite::update(double dt) {
     while (_frameTimer > _delay) {
         _frameTimer -= _delay;
         _currFrame += 1;
-        // if we've reached past the last frame, go back to the first frame
+        // if we've reached past the last frame, callback or go back to the first frame
         if (_currFrame >= _frameCount) {
-            _currFrame = 0;
+            if (_myCallback) {
+                (_delegate->*_myCallback)();
+                _currFrame = 0;
+            } else {
+                _currFrame = 0;
+            }
         }
     }
 }

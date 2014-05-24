@@ -15,12 +15,17 @@
 
 class InputSystem : public entityx::System<InputSystem> {
 public:
-    InputSystem(Application *app) : _app(app) {}
+    InputSystem(Application *app, Fighter *p1) : _app(app), playerOne(p1), _p1disabled(false), _p2disabled(false) {}
     
     void update(entityx::EntityManager &es,
                 entityx::EventManager &events,
                 double dt) override;
+    
+    bool _p1disabled, _p2disabled;
+    
 private:
+    Fighter *playerOne, *playerTwo;
+    
     Application *_app;
 };
 

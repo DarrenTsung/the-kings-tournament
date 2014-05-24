@@ -27,6 +27,7 @@ enum class Animation {
     IDLE,
     WALK,
     BACKWALK,
+    STRAIGHT
 };
 
 /**
@@ -43,10 +44,14 @@ public:
     void update(double dt);
     
     /**
-     Move the character according to input
+     Input functions
      */
     void move_left();
     void move_right();
+    void straight();
+    
+    void set_idle();
+    
     
     // gets the sprite instance currently playing
     Sprite* currentSprite();
@@ -62,6 +67,7 @@ private:
     // maps animations to their id (key) to the sprite
     std::map<std::pair<Animation, Direction>, Sprite*> _animationMap;
     
+    bool _inputDisabled;
     float _moveSpeed;
     StartPosition _startingPosition;
     Direction _facing;

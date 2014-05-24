@@ -14,7 +14,7 @@
 #include "playerinput.h"
 #include "fighter.h"
 
-struct MovementSystem : public entityx::System<MovementSystem>, entityx::Receiver<MovementSystem> {
+struct MovementSystem : public entityx::System<MovementSystem> {
 public:
     MovementSystem(Fighter *p1) : playerOne(p1) {}
     
@@ -23,8 +23,6 @@ public:
                 double dt) override;
     
     void configure(entityx::EventManager &event_manager);
-
-    void receive(const PlayerInput &input);
     
 private:
     Fighter *playerOne, *playerTwo;

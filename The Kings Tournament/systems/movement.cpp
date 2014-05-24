@@ -15,16 +15,4 @@ void MovementSystem::update(entityx::EntityManager &es, entityx::EventManager &e
 }
 
 void MovementSystem::configure(entityx::EventManager &event_manager) {
-    event_manager.subscribe<PlayerInput>(*this);
-}
-
-
-void MovementSystem::receive(const PlayerInput &input) {
-    switch (input.type) {
-        case PLAYER_ONE_LEFT:
-            playerOne->move_left();
-            break;
-        case PLAYER_ONE_RIGHT:
-            playerOne->move_right();
-    }
 }

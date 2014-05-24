@@ -29,7 +29,7 @@ void Stage::start() {
 void Stage::configure() {
     systems.add<MovementSystem>(&playerOne);
     systems.add<RenderSystem>(app->_renderer, app->_window);
-    systems.add<InputSystem>(app);
+    systems.add<InputSystem>(app, &playerOne);
 }
 
 void Stage::initialize() {

@@ -11,6 +11,7 @@
 		6C72A38A192FBE2700987691 /* bear_man_idle_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A388192FBE2700987691 /* bear_man_idle_right.bmp */; };
 		6C72A38B192FBE2700987691 /* bear_man_walk_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A389192FBE2700987691 /* bear_man_walk_right.bmp */; };
 		6C72A38D192FE81B00987691 /* bear_man_backwalk_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A38C192FE81B00987691 /* bear_man_backwalk_right.bmp */; };
+		6C72A39D1930402E00987691 /* bear_man_straight_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A39C1930402E00987691 /* bear_man_straight_right.bmp */; };
 		6C77D15A192D10CC0016D438 /* movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C77D158192D10CC0016D438 /* movement.cpp */; };
 		6C97D8CC192C33C6005468B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8CB192C33C6005468B7 /* Cocoa.framework */; };
 		6C97D8EB192C33C6005468B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97D8EA192C33C6005468B7 /* XCTest.framework */; };
@@ -46,6 +47,7 @@
 		6C72A388192FBE2700987691 /* bear_man_idle_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_idle_right.bmp; path = resources/bear_man_idle_right.bmp; sourceTree = "<group>"; };
 		6C72A389192FBE2700987691 /* bear_man_walk_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_walk_right.bmp; path = resources/bear_man_walk_right.bmp; sourceTree = "<group>"; };
 		6C72A38C192FE81B00987691 /* bear_man_backwalk_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_backwalk_right.bmp; path = resources/bear_man_backwalk_right.bmp; sourceTree = "<group>"; };
+		6C72A39C1930402E00987691 /* bear_man_straight_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_straight_right.bmp; path = resources/bear_man_straight_right.bmp; sourceTree = "<group>"; };
 		6C77D158192D10CC0016D438 /* movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = movement.cpp; path = systems/movement.cpp; sourceTree = "<group>"; };
 		6C77D159192D10CC0016D438 /* movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movement.h; path = systems/movement.h; sourceTree = "<group>"; };
 		6C97D8C8192C33C6005468B7 /* The Kings Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Kings Tournament.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 		6C97D8D2192C33C6005468B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C72A39C1930402E00987691 /* bear_man_straight_right.bmp */,
 				6C72A38C192FE81B00987691 /* bear_man_backwalk_right.bmp */,
 				6C72A388192FBE2700987691 /* bear_man_idle_right.bmp */,
 				6C72A389192FBE2700987691 /* bear_man_walk_right.bmp */,
@@ -330,6 +333,7 @@
 				6C9EBF54192D539900D723FD /* bear_man.plist in Resources */,
 				6C72A38A192FBE2700987691 /* bear_man_idle_right.bmp in Resources */,
 				6C72A38B192FBE2700987691 /* bear_man_walk_right.bmp in Resources */,
+				6C72A39D1930402E00987691 /* bear_man_straight_right.bmp in Resources */,
 				6C72A38D192FE81B00987691 /* bear_man_backwalk_right.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

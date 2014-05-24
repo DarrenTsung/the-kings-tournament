@@ -10,10 +10,18 @@
 #include "playerinput.h"
 
 void InputSystem::update(entityx::EntityManager &es, entityx::EventManager &events, double dt) {
-    if (_app->keystate.left) {
-        events.emit<PlayerInput>(PLAYER_ONE_LEFT);
-    }
-    if (_app->keystate.right) {
-        events.emit<PlayerInput>(PLAYER_ONE_RIGHT);
+    if (!_p1disabled) {
+        if (_app->keystate.left) {
+            events.emit<PlayerInput>(InputType::PLAYER_ONE_LEFT);
+            playerOne->move_left();
+        }
+        if (_app->keystate.right) {
+            events.emit<PlayerInput>(InputType::PLAYER_ONE_RIGHT);
+            playerOne->move_right();
+        }
+        if (_app->keystate.heavy) {
+            events.emit<PlayerInput>(InputType::PLAYER_ONE_HEAVY);
+            playerOne->straight();
+        }
     }
 }

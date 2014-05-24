@@ -11,9 +11,10 @@
 
 #include <entityx/entityx.h>
 
-enum InputType {
-    PLAYER_ONE_LEFT = 0,
-    PLAYER_ONE_RIGHT = 1
+enum class InputType {
+    PLAYER_ONE_LEFT,
+    PLAYER_ONE_RIGHT,
+    PLAYER_ONE_HEAVY,
 };
 
 struct PlayerInput : public entityx::Event<PlayerInput> {

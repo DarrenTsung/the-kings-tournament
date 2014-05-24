@@ -19,6 +19,7 @@ struct Keys {
     bool down = false;
     bool left = false;
     bool right = false;
+    bool heavy = false;
 };
 
 /**

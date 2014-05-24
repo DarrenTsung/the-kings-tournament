@@ -19,7 +19,7 @@
 Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     _startingPosition(pos)
 {
-    _moveSpeed = 60.0f;
+    _moveSpeed = 80.0f;
     _state = State::GROUND;
     
     switch(_startingPosition) {
@@ -39,9 +39,13 @@ Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     Sprite *a2 = new Sprite("bear_man_walk_right.bmp", renderer, 4, 180, 0.2);
     _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
          std::make_pair(Animation::WALK, Direction::RIGHT), a2));
-    Sprite *a3 = new Sprite("bear_man_backwalk_right.bmp", renderer, 4, 180, 0.3);
+    Sprite *a3 = new Sprite("bear_man_backwalk_right.bmp", renderer, 4, 180, 0.4);
     _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
          std::make_pair(Animation::BACKWALK, Direction::RIGHT), a3));
+    Sprite *a4 = new Sprite("bear_man_straight_right.bmp", renderer, 5, 180, 0.06);
+    a4->set_callback(&Fighter::set_idle, this);
+    _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
+         std::make_pair(Animation::STRAIGHT, Direction::RIGHT), a4));
     
     // idle sprite is start animation
     currentAnimation = Animation::IDLE;
@@ -57,6 +61,11 @@ Fighter& Fighter::operator=(const Fighter& other) {
     
     currentAnimation = other.currentAnimation;
     _animationMap = other._animationMap;
+    typedef std::map<std::pair<Animation, Direction>, Sprite*>::iterator it_type;
+    // update the delegate for all the animations (as long as no callback is created, no callbacks will be called);
+    for(it_type iterator = _animationMap.begin(); iterator != _animationMap.end(); iterator++) {
+        iterator->second->update_delegate(this);
+    }
     return *this;
 }
 
@@ -100,11 +109,20 @@ void Fighter::update(double dt) {
             float dtPos_x = dt * vel->x;
             // switch position change if facing left (a positive change adds negative x)
             if (_facing == Direction::LEFT) dtPos_x *= -1;
+            if (abs(dtPos_x) > 0) {
+                std::cout << "dtPos_x: " << dtPos_x << std::endl;
+            }
             pos->x += dtPos_x;
             
             // friction, velocity decreases by fraction every second
             // INTEGRATION PROBLEMS I KNOW FIX LATER
-            float change = vel->x > 0 ? -dt*2*_moveSpeed : dt*2*_moveSpeed;
+            float change = 0;
+            if (vel->x != 0)
+                change = vel->x > 0.0 ? -dt*2.0*_moveSpeed : dt*2.0*2.0/3.0*_moveSpeed;
+            if (abs(change) > 0) {
+                std::cout << "vel: " << vel->x << " | " << vel->y << std::endl;
+                std::cout << "change: " << change << std::endl;
+            }
             vel->x += change;
             if (abs(vel->x) < 10) {
                 vel->x = 0;
@@ -123,12 +141,14 @@ void Fighter::update(double dt) {
 
 void Fighter::move_left() {
     // no input allowed if not on ground
-    if (_state == State::GROUND) {
+    if (_state == State::GROUND && !_inputDisabled) {
         entityx::ComponentHandle<Velocity> vel = _entity.component<Velocity>();
         if (_facing == Direction::LEFT) {
             vel->x = _moveSpeed;
+            if (currentAnimation != Animation::WALK)
+                switchAnimation(Animation::WALK);
         } else {
-            vel->x = -_moveSpeed;
+            vel->x = -1.0/2.0*_moveSpeed;
             if (currentAnimation != Animation::BACKWALK)
                 switchAnimation(Animation::BACKWALK);
         }
@@ -137,20 +157,36 @@ void Fighter::move_left() {
 
 void Fighter::move_right() {
     // no input allowed if not on ground
-    if (_state == State::GROUND) {
+    if (_state == State::GROUND && !_inputDisabled) {
         entityx::ComponentHandle<Velocity> vel = _entity.component<Velocity>();
         if (_facing == Direction::RIGHT) {
             vel->x = _moveSpeed;
             if (currentAnimation != Animation::WALK)
                 switchAnimation(Animation::WALK);
         } else {
-            // TURN HERE
-            _facing = Direction::RIGHT;
+            vel->x = -1.0/2.0*_moveSpeed;
+            if (currentAnimation != Animation::BACKWALK)
+                switchAnimation(Animation::BACKWALK);
         }
     }
 }
 
+void Fighter::straight() {
+    // no input is allowed if not on ground
+    if (_state == State::GROUND && !_inputDisabled) {
+        switchAnimation(Animation::STRAIGHT);
+        _inputDisabled = true;
+    }
+}
+
+void Fighter::set_idle() {
+    switchAnimation(Animation::IDLE);
+    _inputDisabled = false;
+}
+
 void Fighter::switchAnimation(Animation animationToSwitchTo) {
-    currentAnimation = animationToSwitchTo;
-    _animationMap[std::make_pair(currentAnimation, _facing)]->reset();
+    if (!_inputDisabled) {
+        currentAnimation = animationToSwitchTo;
+        _animationMap[std::make_pair(currentAnimation, _facing)]->reset();
+    }
 }

@@ -12,6 +12,11 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
+class Fighter;
+
+// typedef to make callbacks easier (no arguments + no return)
+typedef void (Fighter::* CallbackType)();
+
 /**
  Sprite is a single sprite animation, it loads in a single stripe of frames 
  and returns the right srcRect for each frame.
@@ -43,6 +48,13 @@ public:
     void update(double dt);
     
     /**
+     changes the type from looping (default) to callback at the end of the sprite animation
+     */
+    void set_callback(CallbackType callback, Fighter* delegate);
+    // for copying fighter objects
+    void update_delegate(Fighter *newDelegate);
+    
+    /**
      resets the current state of the animation, ie sets current frame to 0 and frame timer to 0
      */
     void reset();
@@ -52,6 +64,9 @@ public:
     unsigned frameHeight, frameWidth;
     
 private:
+    CallbackType _myCallback;
+    Fighter *_delegate;
+    
     unsigned _frameCount, _currFrame;
     float _delay, _frameTimer;
 };
