@@ -15,12 +15,7 @@
 
 namespace helper {
 
-    inline SDL_Surface* SurfaceForString(std::string fontPath, std::string string, int fontSize, SDL_Color fontColor) {
-        TTF_Font *font = TTF_OpenFont(fontPath.c_str(), fontSize);
-        if(!font) {
-            printf("TTF_OpenFont: %s\n", TTF_GetError());
-            // handle error
-        }
+    inline SDL_Surface* SurfaceForFontAndString(TTF_Font *font, std::string string, SDL_Color fontColor) {
         return TTF_RenderText_Solid(font, string.c_str(), fontColor);
     }
 

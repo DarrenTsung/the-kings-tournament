@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C49282F19314BF000609AFE /* bear_man_jab_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C49282E19314BF000609AFE /* bear_man_jab_right.bmp */; };
 		6C72A383192EC7B700987691 /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C72A381192EC7B700987691 /* sprite.cpp */; };
 		6C72A38A192FBE2700987691 /* bear_man_idle_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A388192FBE2700987691 /* bear_man_idle_right.bmp */; };
 		6C72A38B192FBE2700987691 /* bear_man_walk_right.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6C72A389192FBE2700987691 /* bear_man_walk_right.bmp */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C49282E19314BF000609AFE /* bear_man_jab_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_jab_right.bmp; path = resources/bear_man_jab_right.bmp; sourceTree = "<group>"; };
 		6C72A381192EC7B700987691 /* sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sprite.cpp; path = components/sprite.cpp; sourceTree = "<group>"; };
 		6C72A382192EC7B700987691 /* sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sprite.h; path = components/sprite.h; sourceTree = "<group>"; };
 		6C72A388192FBE2700987691 /* bear_man_idle_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bear_man_idle_right.bmp; path = resources/bear_man_idle_right.bmp; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		6C97D8D2192C33C6005468B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C49282E19314BF000609AFE /* bear_man_jab_right.bmp */,
 				6C72A39C1930402E00987691 /* bear_man_straight_right.bmp */,
 				6C72A38C192FE81B00987691 /* bear_man_backwalk_right.bmp */,
 				6C72A388192FBE2700987691 /* bear_man_idle_right.bmp */,
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C9EBF46192D351100D723FD /* bear_man.bmp in Resources */,
+				6C49282F19314BF000609AFE /* bear_man_jab_right.bmp in Resources */,
 				6C97D910192C3484005468B7 /* bitfont.TTF in Resources */,
 				6C9EBF54192D539900D723FD /* bear_man.plist in Resources */,
 				6C72A38A192FBE2700987691 /* bear_man_idle_right.bmp in Resources */,

@@ -49,6 +49,13 @@ bool Application::initialize() {
 		fprintf(stderr, "TTF_Init() failed: %s\n", TTF_GetError());
         return false;
     }
+    
+    // open the font
+    debug_font = TTF_OpenFont("bitfont.TTF", 12);
+    if(!debug_font) {
+        printf("TTF_OpenFont: %s\n", TTF_GetError());
+        // handle error
+    }
 	
 	_window = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN);
 	_renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
@@ -118,6 +125,9 @@ void Application::onEvent(SDL_Event* event)
                 case SDLK_k:
                     keystate.heavy = true;
                     break;
+                case SDLK_j:
+                    keystate.light = true;
+                    break;
             }
             break;
 		}
@@ -141,6 +151,9 @@ void Application::onEvent(SDL_Event* event)
                 case SDLK_k:
                     keystate.heavy = false;
                     break;
+                case SDLK_j:
+                    keystate.light = false;
+                    break;
             }
             break;
         }
@@ -157,7 +170,7 @@ void Application::render()
     if (_debugMode && _fps) {
         char fps_string[15];
         sprintf(fps_string, "FPS: %.1f", _fps);
-        SDL_Surface *fps_surface = helper::SurfaceForString("bitfont.TTF", std::string(fps_string), 12, {255, 255, 255});
+        SDL_Surface *fps_surface = helper::SurfaceForFontAndString(debug_font, std::string(fps_string), {255, 255, 255});
         SDL_Texture *tex = SDL_CreateTextureFromSurface(_renderer, fps_surface);
         SDL_FreeSurface(fps_surface);
         SDL_Rect target; target.w = 95; target.h = 30; target.x = 10; target.y = height - target.h - 5;

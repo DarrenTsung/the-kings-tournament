@@ -19,7 +19,7 @@
 Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     _startingPosition(pos)
 {
-    _moveSpeed = 80.0f;
+    _moveSpeed = 130.0f;
     _state = State::GROUND;
     
     switch(_startingPosition) {
@@ -39,13 +39,17 @@ Fighter::Fighter(StartPosition pos, SDL_Renderer *renderer) :
     Sprite *a2 = new Sprite("bear_man_walk_right.bmp", renderer, 4, 180, 0.2);
     _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
          std::make_pair(Animation::WALK, Direction::RIGHT), a2));
-    Sprite *a3 = new Sprite("bear_man_backwalk_right.bmp", renderer, 4, 180, 0.4);
+    Sprite *a3 = new Sprite("bear_man_backwalk_right.bmp", renderer, 4, 180, 0.23);
     _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
          std::make_pair(Animation::BACKWALK, Direction::RIGHT), a3));
     Sprite *a4 = new Sprite("bear_man_straight_right.bmp", renderer, 5, 180, 0.06);
     a4->set_callback(&Fighter::set_idle, this);
     _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
          std::make_pair(Animation::STRAIGHT, Direction::RIGHT), a4));
+    Sprite *a5 = new Sprite("bear_man_jab_right.bmp", renderer, 4, 180, 0.05);
+    a5->set_callback(&Fighter::set_idle, this);
+    _animationMap.insert(std::pair<std::pair<Animation, Direction>, Sprite*>(
+         std::make_pair(Animation::JAB, Direction::RIGHT), a5));
     
     // idle sprite is start animation
     currentAnimation = Animation::IDLE;
@@ -175,6 +179,14 @@ void Fighter::straight() {
     // no input is allowed if not on ground
     if (_state == State::GROUND && !_inputDisabled) {
         switchAnimation(Animation::STRAIGHT);
+        _inputDisabled = true;
+    }
+}
+
+void Fighter::jab() {
+    // no input if not on ground or if input is disabled
+    if (_state == State::GROUND && !_inputDisabled) {
+        switchAnimation(Animation::JAB);
         _inputDisabled = true;
     }
 }

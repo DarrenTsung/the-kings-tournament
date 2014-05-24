@@ -59,7 +59,6 @@ public:
      */
     void reset();
     
-    
     SDL_Texture *animationTexture;
     unsigned frameHeight, frameWidth;
     

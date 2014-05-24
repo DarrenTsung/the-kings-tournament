@@ -20,6 +20,7 @@ struct Keys {
     bool left = false;
     bool right = false;
     bool heavy = false;
+    bool light = false;
 };
 
 /**
@@ -55,6 +56,8 @@ private:
     Stage _stage;
     bool _running, _paused, _debugMode;
     float _fps;
+    
+    TTF_Font *debug_font;
 };
 
 #endif /* defined(__The_Kings_Tournament__app__) */

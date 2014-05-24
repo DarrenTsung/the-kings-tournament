@@ -15,6 +15,7 @@ enum class InputType {
     PLAYER_ONE_LEFT,
     PLAYER_ONE_RIGHT,
     PLAYER_ONE_HEAVY,
+    PLAYER_ONE_LIGHT
 };
 
 struct PlayerInput : public entityx::Event<PlayerInput> {

@@ -23,5 +23,9 @@ void InputSystem::update(entityx::EntityManager &es, entityx::EventManager &even
             events.emit<PlayerInput>(InputType::PLAYER_ONE_HEAVY);
             playerOne->straight();
         }
+        if (_app->keystate.light) {
+            events.emit<PlayerInput>(InputType::PLAYER_ONE_LIGHT);
+            playerOne->jab();
+        }
     }
 }

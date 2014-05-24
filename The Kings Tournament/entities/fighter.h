@@ -27,7 +27,8 @@ enum class Animation {
     IDLE,
     WALK,
     BACKWALK,
-    STRAIGHT
+    STRAIGHT,
+    JAB
 };
 
 /**
@@ -49,6 +50,7 @@ public:
     void move_left();
     void move_right();
     void straight();
+    void jab();
     
     void set_idle();
     
